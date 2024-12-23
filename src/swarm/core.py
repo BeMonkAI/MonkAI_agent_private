@@ -1,6 +1,6 @@
-# Standard library imports
-import sys
-sys.path.append('/home/davi/Desktop/MonkAI_agent')
+#import sys, os
+#sys.path.append('/home/davi/Desktop/MonkAI_agent')
+
 import copy
 import json
 from collections import defaultdict
@@ -8,7 +8,8 @@ from typing import List, Callable, Union
 import asyncio
 
 # Package/library imports
-from openai import OpenAI
+#from openai import OpenAI
+import aisuite as ai
 
 __DOCUMENT_GUARDRAIL_TEXT__ = "RESPONDER SÓ USANDO A INFORMAÇÃO DOS DOCUMENTOS: "
 
@@ -30,7 +31,7 @@ __GUARDRIAL_MESSAGE__ = 'Não responder perguntas que não esteja no contexto.'
 class Swarm:
     def __init__(self, client=None):
         if not client:
-            client = OpenAI()
+            client = ai.Client()
         self.client = client
 
     def get_chat_completion(

@@ -97,7 +97,10 @@ def run_mydemo_loop(
 async def async_run_mydemo_loop(
     starting_agent, context_variables=None, stream=False, debug=False, engine=None
 ) -> None:
-    client = Swarm(client = engine.client)
+    if engine is not None:
+        client = Swarm(client = engine.client)
+    else:
+        client = Swarm(client=None)
     print("Starting MonkAI Agent ✨")
 
     messages = []
