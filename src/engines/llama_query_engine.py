@@ -1,5 +1,5 @@
-import sys
-sys.path.append('/home/davi/Desktop/MonkAI_agent')
+#import sys, os
+#sys.path.append('/home/davi/Desktop/MonkAI_agent')
 import base64
 import logging
 from typing import Any
@@ -9,7 +9,7 @@ from llama_index.core.base.llms.types import (
     ChatResponse
 )
 from llama_index.core import   VectorStoreIndex
-import config
+import config 
 from io import BytesIO
 from engines.ai_manager import AIManager, AzureRegion
 

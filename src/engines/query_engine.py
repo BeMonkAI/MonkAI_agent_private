@@ -1,5 +1,5 @@
-import sys
-sys.path.append('/home/davi/Desktop/MonkAI_agent')
+#import sys, os
+#sys.path.append('/home/davi/Desktop/MonkAI_agent')
 import os
 from openai import AzureOpenAI
 from openai.types.chat import ChatCompletion

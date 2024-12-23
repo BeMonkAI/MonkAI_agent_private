@@ -1,6 +1,7 @@
 
 from creators.monkai_agent_creator import MonkaiAgentCreator
 from swarm import Agent
+import security
 import os
 
 #menssagens = [SystemMessage,SystemMessage,InstructionMessage1,InstructionMessage2, InstructionMessage3, .....]
@@ -23,7 +24,12 @@ class PythonDeveloperAgentCreator(MonkaiAgentCreator):
                         self.create_python_file,
                         self.write_code_in_file
                       ])
-
+        
+    def is_user_valid(self):
+        
+        return True
+    
+    
     def verify_address(self, address):
         if not address:
             return os.getcwd()
@@ -31,11 +37,14 @@ class PythonDeveloperAgentCreator(MonkaiAgentCreator):
             return f"Endereço {address} não é valido."
         return address
 
+    @security.validate(is_user_valid)
     def create_python_file(self, path, file_name):
         complete_path = os.path.join(path, file_name)
         with open(complete_path, 'w') as f:
             f.write('')
-
+    
+    
+    @security.validate(is_user_valid)
     def write_code_in_file(self,path, file_name, code):
         """
         Write the code in the file.
