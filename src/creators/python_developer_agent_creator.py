@@ -27,7 +27,7 @@ class PythonDeveloperAgentCreator(MonkaiAgentCreator):
         
     def is_user_valid(self):
         
-        return False
+        return True
     
     
     def verify_address(self, address):
