@@ -1,12 +1,16 @@
 # Standard library imports
+import sys
+sys.path.append('/home/davi/Desktop/MonkAI_agent')
 import copy
 import json
 from collections import defaultdict
 from typing import List, Callable, Union
+import asyncio
 
 # Package/library imports
 from openai import OpenAI
 
+__DOCUMENT_GUARDRAIL_TEXT__ = "RESPONDER SÓ USANDO A INFORMAÇÃO DOS DOCUMENTOS: "
 
 # Local imports
 from .util import function_to_json, debug_print, merge_chunk
@@ -228,7 +232,7 @@ class Swarm:
             )
         }
 
-    def run(
+    async def run(
         self,
         agent: Agent,
         messages: List,
@@ -255,8 +259,9 @@ class Swarm:
         init_len = len(messages)
 
         while len(history) - init_len < max_turns and active_agent:
-
-            # get completion with current history, agent
+            if active_agent.external_content:
+                history[-1]["content"] = __DOCUMENT_GUARDRAIL_TEXT__ +  history[-1]["content"]
+            # get completion with current history, agentr
             completion = self.get_chat_completion(
                 agent=active_agent,
                 history=history,
@@ -284,6 +289,7 @@ class Swarm:
             context_variables.update(partial_response.context_variables)
             if partial_response.agent:
                 active_agent = partial_response.agent
+
 
         return Response(
             messages=history[init_len:],

@@ -1,6 +1,8 @@
 from swarm import Swarm
+import asyncio
 #from swarm.repl import process_and_print_streaming_response, pretty_print_messages
 from creators.triaggent_agent_creator import TriaggentAgenCreator
+
 import json
 from engines.query_engine import QueryEngine
 from engines.llama_query_engine import LLamaQueryEngine
@@ -83,6 +85,38 @@ def run_mydemo_loop(
             model_override= config.GPT4o_OPENAI_GPT_MODEL_BRASILSOUTH,
         )
 
+
+        if stream:
+            response = process_and_print_streaming_response(response)
+        else:
+            pretty_print_messages(response.messages)
+
+        messages.extend(response.messages)
+        agent = response.agent
+
+async def async_run_mydemo_loop(
+    starting_agent, context_variables=None, stream=False, debug=False, engine=None
+) -> None:
+    client = Swarm(client = engine.client)
+    print("Starting MonkAI Agent ✨")
+
+    messages = []
+    agent = starting_agent
+
+    while True:
+        user_input = input("\033[38;2;167;112;69mUser\033[0m: ")
+        messages.append({"role": "user", "content": user_input})
+
+        response =  await client.run(
+            agent=agent,
+            messages=messages,
+            context_variables=context_variables or {},
+            stream=stream,
+            debug=debug,
+            model_override= config.GPT4o_OPENAI_GPT_MODEL_BRASILSOUTH,
+        )
+
+
         if stream:
             response = process_and_print_streaming_response(response)
         else:
@@ -108,4 +142,4 @@ if __name__ == '__main__':
     qengine = QueryEngine()
     agents_creators.append(PythonDeveloperAgentCreator())
     triaggent_agent = TriaggentAgenCreator(agents_creators)
-    run_mydemo_loop(triaggent_agent.triaggent_agent, engine=qengine)
+    asyncio.run(async_run_mydemo_loop(triaggent_agent.triaggent_agent, engine=qengine))
