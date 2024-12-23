@@ -9,5 +9,4 @@ llama-index-agent-openai==0.2.9
 llama-index-llms-azure-openai==0.1.9
 llama-index-embeddings-azure-openai==0.1.11
 llama-index-multi-modal-llms-azure-openai==0.1.4
-git+https://github.com/openai/swarm.git
 pymongo==4.8.0
