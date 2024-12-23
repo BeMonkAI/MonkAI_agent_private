@@ -3,7 +3,7 @@ from creators.monkai_agent_creator import MonkaiAgentCreator
 from swarm import Agent
 import os
 
-menssagens = [SystemMessage,SystemMessage,InstructionMessage1,InstructionMessage2, InstructionMessage3, .....]
+#menssagens = [SystemMessage,SystemMessage,InstructionMessage1,InstructionMessage2, InstructionMessage3, .....]
 
 class PythonDeveloperAgentCreator(MonkaiAgentCreator):
     def __init__(self):
