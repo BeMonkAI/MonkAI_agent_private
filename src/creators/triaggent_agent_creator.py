@@ -12,6 +12,8 @@ class TriaggentAgenCreator(MonkaiAgentCreator):
             return agent_creator.get_agent()
         transfer_function.__name__ = f"transfer_to_{agent_creator.get_agent().name.replace(' ', '_')}"
         return transfer_function
+    
+
 
     def __build_agent(self):
         instructions = ""

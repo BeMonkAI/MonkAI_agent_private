@@ -19,6 +19,7 @@ class Agent(BaseModel):
     tool_choice: str = None
     parallel_tool_calls: bool = True
     external_content: bool = False
+    guardrails: bool = True
 
 
 class Response(BaseModel):

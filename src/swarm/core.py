@@ -25,7 +25,7 @@ from .types import (
 )
 
 __CTX_VARS_NAME__ = "context_variables"
-
+__GUARDRIAL_MESSAGE__ = 'Não responder perguntas que não esteja no contexto.'
 
 class Swarm:
     def __init__(self, client=None):
@@ -48,6 +48,8 @@ class Swarm:
             if callable(agent.instructions)
             else agent.instructions
         )
+        if agent.guardrails:
+            instructions +=f"\n{__GUARDRIAL_MESSAGE__}\n"
         messages = [{"role": "system", "content": instructions}] + history
         debug_print(debug, "Getting chat completion for...:", messages)
 
@@ -69,7 +71,7 @@ class Swarm:
 
         if tools:
             create_params["parallel_tool_calls"] = agent.parallel_tool_calls
-
+        
         return self.client.chat.completions.create(**create_params)
 
     def handle_function_result(self, result, debug) -> Result:

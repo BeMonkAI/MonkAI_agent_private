@@ -3,7 +3,6 @@ from swarm import Agent
 
 class MonkaiAgentCreator(ABC):
 
-
     @abstractmethod
     def get_agent(self)->Agent:
         pass
@@ -22,6 +21,14 @@ class TransferTriaggenAgentCreator(MonkaiAgentCreator):
     """
 
     __triaggent_agent = None
+    def __init__(self, guardrail: str,  __triaggent_agent:Agent = None):
+        """
+        Initializes the triaggen agent creator.
+
+        Args:
+            agents_creator (list[MonkaiAgentCreator]): The list of agents to be created.
+        """
+        self.__triaggent_agent = None
 
     @property
     def set_triaggent_agent(self, triaggent_agent: Agent):
