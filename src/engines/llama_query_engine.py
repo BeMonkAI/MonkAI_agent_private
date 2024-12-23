@@ -1,3 +1,5 @@
+import sys
+sys.path.append('/home/davi/Desktop/MonkAI_agent')
 import base64
 import logging
 from typing import Any

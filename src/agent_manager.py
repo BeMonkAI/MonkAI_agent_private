@@ -4,7 +4,7 @@ import logging
 import re
 import secrets  # For secure token generation
 import hashlib
-import  config
+import config
 from engines.query_engine import QueryEngine
 from .creators.monkai_agent_creator import MonkaiAgentCreator
 from .creators.triaggent_agent_creator import TriaggentAgenCreator  # For hashing passwords
