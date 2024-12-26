@@ -2,7 +2,7 @@ from swarm import Swarm
 import asyncio
 #from swarm.repl import process_and_print_streaming_response, pretty_print_messages
 from creators.triaggent_agent_creator import TriaggentAgenCreator
-
+import aisuite as ai
 import json
 from engines.query_engine import QueryEngine
 from engines.llama_query_engine import LLamaQueryEngine
@@ -10,6 +10,7 @@ from bson import ObjectId
 #from monkai_shared import config
 import config 
 from llama_index.core import Settings
+from provider_enum import ProviderEnum
 
 def process_and_print_streaming_response(response):
     content = ""
@@ -110,15 +111,30 @@ async def async_run_mydemo_loop(
         user_input = input("\033[38;2;167;112;69mUser\033[0m: ")
         messages.append({"role": "user", "content": user_input})
 
-        response =  await client.run(
+        '''response =  await client.run(
             agent=agent,
             messages=messages,
             context_variables=context_variables or {},
             stream=stream,
             debug=debug,
             model_override= config.GPT4o_OPENAI_GPT_MODEL_BRASILSOUTH,
-        )
+        )'''
+  
 
+        #model=f"{ProviderEnum.AZURE.value}:{config.GPT4o_OPENAI_GPT_MODEL_BRASILSOUTH}"
+        provider_configs = {"azure": {"api_key": f"{config.OPENAI_API_KEY_BRASILSOUTH}",
+                                          "base_url": f"{config.OPENAI_AZURE_ENDPOINT_BRASILSOUTH}",
+                                          "api_version": f"{config.GPT4o_OPENAI_API_VERSION_BRASILSOUTH}",}}
+        client = ai.Client(provider_configs=provider_configs)
+        model=f"{ProviderEnum.AZURE.value}:{config.GPT4o_OPENAI_GPT_MODEL_BRASILSOUTH}"
+        model="azure:gpt-4o-monkai-south"
+
+        response = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            temperature=0.75
+        )
+        
 
         if stream:
             response = process_and_print_streaming_response(response)

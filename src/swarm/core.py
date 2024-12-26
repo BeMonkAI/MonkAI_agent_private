@@ -6,7 +6,7 @@ import json
 from collections import defaultdict
 from typing import List, Callable, Union
 import asyncio
-
+import config
 # Package/library imports
 #from openai import OpenAI
 import aisuite as ai
@@ -31,7 +31,10 @@ __CTX_VARS_NAME__ = "context_variables"
 class Swarm:
     def __init__(self, client=None):
         if not client:
-            client = ai.Client()
+            provider_configs = {"azure": {"api_key": f"{config.OPENAI_API_KEY_BRASILSOUTH}",
+                                          "base_url": f"{config.OPENAI_AZURE_ENDPOINT_BRASILSOUTH}",
+                                          "api_version": f"{config.GPT4o_OPENAI_API_VERSION_BRASILSOUTH}",}}
+            client = ai.Client(provider_configs=provider_configs)
         self.client = client
 
     def get_chat_completion(
