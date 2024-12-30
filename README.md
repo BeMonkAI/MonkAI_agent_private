@@ -12,12 +12,24 @@
 <h2 style="font-family: 'Courier New', monospace; color: green;">Install</h2> 
 
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
-Este parágrafo usa Arial e tem um tamanho e cor personalizados.
+Make sure you have Python 3.11 or higher installed on your system.
+
+Clone this repository:
+
+git clone https://github.com/BeMonkAI/MonkAI_agent.git
+
+or
+
+pip install MonkAI_agent
+
+Navigate to the project directory and install the dependencies:
+
+pip install -r requirements.txt
 </p>
 
 <h2 style="font-family: 'Courier New', monospace; color: green;">Arquitecture</h2>  
 
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
-Este parágrafo usa Arial e tem um tamanho e cor personalizados.
+colocar uma imagene explicação
 </p>
 
