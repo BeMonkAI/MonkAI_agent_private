@@ -12,7 +12,7 @@
   With this framework, you can create, manage, and optimize agents quickly and efficiently. Whether for specific tasks or more complex applications, it provides a modular base that adapts to your needs. Its simplicity of use, combined with its flexibility, makes it an ideal choice for both beginners and experienced developers.
 </p>
 
-<h2 style="font-family: 'Courier New', monospace; color: green;">Install</h2> 
+<h3 style="font-family: 'Courier New', monospace; color: green;">Install</h3> 
 
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
 Make sure you have Python 3.11 or higher installed on your system.
@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 </p>
 
-<h2 style="font-family: 'Courier New', monospace; color: green;">Arquitecture</h2>  
+<h3 style="font-family: 'Courier New', monospace; color: green;">Arquitecture</h3>  
 
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
 colocar uma imagene explicação
