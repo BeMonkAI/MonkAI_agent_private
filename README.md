@@ -19,15 +19,22 @@ Make sure you have Python 3.11 or higher installed on your system.
 
 Clone this repository:
 
-git clone https://github.com/BeMonkAI/MonkAI_agent.git
+<pre style="background-color: #f6f8fa; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+ git clone https://github.com/BeMonkAI/MonkAI_agent.git
+</pre>
 
 or
 
+<pre style="background-color: #f6f8fa; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
 pip install MonkAI_agent
+</pre>  
 
 Navigate to the project directory and install the dependencies:
 
+<pre style="background-color: #f6f8fa; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
 pip install -r requirements.txt
+</pre>
+
 </p>
 
 <h2 style="font-family: 'Courier New', monospace; color: green;">Arquitecture</h2>  
