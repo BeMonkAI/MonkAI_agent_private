@@ -1,4 +1,4 @@
-<img src="mascote_monkai.png" alt="Logo" width="100"> <img src="logo_monkai.png" alt="Logo" width="150">
+<img src="mascote_monkai.png" alt="Logo" width="120"> <img src="logo_monkai.png" alt="Logo" width="150">
 
 
 <h2 style="font-family: 'Courier New', monospace; color: green;">Introduction</h2>
