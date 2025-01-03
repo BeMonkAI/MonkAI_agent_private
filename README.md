@@ -33,6 +33,7 @@ Navigate to the project directory and install the dependencies:
 pip install -r requirements.txt
 </pre>
 
+Important* do not forget your configuration file `config.py`, where you save your API Keys.
 </p>
 
 <h2 style="font-family: 'Courier New', monospace; color: green;">Arquitecture</h2>  
@@ -40,20 +41,21 @@ pip install -r requirements.txt
 <h3 style="font-family: 'Courier New', monospace; color: green;">Main Components</h3>  
 
 <h4 style="font-family: 'Courier New', monospace; color: green;">Agent creation and management</h4>
-<p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
-The core/ contains the main components where the central logic of the system is located. The base.py contains the definition of the AgentManager class, and the monkai_agent_creator.py contains the definition of the MonkaiAgentCreator class.
-  
-AgentManager: Manages interaction with agents. Initializes with a client, a list of agent creators, context variables, and streaming and debug options. Has methods to execute conversations asynchronously.
 
-MonkaiAgentCreator: Responsible for creating agent instances. Can be configured to create different types of agents based on the system's needs.
+<p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
+The core/ contains the main components where the central logic of the system is located. The `base.py` contains the definition of the AgentManager class, and the `monkai_agent_creator.py` contains the definition of the `MonkaiAgentCreator` class.
+  
+`AgentManager`: Manages interaction with agents. Initializes with a client, a list of agent creators, context variables, and streaming and debug options. Has methods to execute conversations asynchronously.
+
+`MonkaiAgentCreator`: Responsible for creating agent instances. Can be configured to create different types of agents based on the system's needs.
 </p>
 
 <h4 style="font-family: 'Courier New', monospace; color: green;">Queries and data processing</h4>
 
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
-The engines/contain the component responsible for executing specific operations, such as queries and data processing, as well as integration with other models and external systems. The query_engine.py contains the definition of the QueryEngine class.
+The engines/ contain the component responsible for executing specific operations, such as queries and data processing, as well as integration with other models and external systems. The `query_engine.py` contains the definition of the QueryEngine class.
   
-QueryEngine: Main class responsible for performing queries and interacting with the model and other data sources.
+`QueryEngine`: Main class responsible for performing queries and interacting with the model and other data sources.
 
 </p>
 
@@ -69,11 +71,11 @@ The framework's architecture is modular and extensible, allowing the creation an
 
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
 
-Initialization: The system is initialized by creating instances of AgentManager and MonkaiAgentCreator. The AgentManager is configured with a client, agent creators, context variables, and streaming and debugging options.
+Initialization: The system is initialized by creating instances of `AgentManager` and `MonkaiAgentCreator`. The `AgentManager` is configured with a client, agent creators, context variables, and streaming and debugging options.
 
-User Interaction: The main loop, async_run_mydemo_loop function in the demo.py file, prompts for user input and adds the message to the message list. The AgentManager processes the user's message by calling its run method.
+User Interaction: The main loop, `async_run_mydemo_loop` function in the `demo.py` file, prompts for user input and adds the message to the message list. The `AgentManager` processes the user's message by calling its `run` method.
 
-Response Processing: The AgentManager's run method sends the message to the client, interacting with the configured agent. The agent's response is processed and displayed to the user.
+Response Processing: The AgentManager's `run` method sends the message to the client, interacting with the configured agent. The agent's response is processed and displayed to the user.
 
 
 </p>
