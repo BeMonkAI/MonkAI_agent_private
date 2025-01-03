@@ -42,7 +42,7 @@ Important* do not forget your configuration file `config.py`, where you save you
 
 <h4 style="font-family: 'Courier New', monospace; color: green;">Agent creation and management</h4>
 
-The `core/` contains the main components where the central logic of the system is located. The `base.py` contains the definition of the AgentManager class, and the `monkai_agent_creator.py` contains the definition of the `MonkaiAgentCreator` class.
+The `core/` contains the main components where the central logic of the system is located. The `base.py` contains the definition of the `AgentManager` class, and the `monkai_agent_creator.py` contains the definition of the `MonkaiAgentCreator` class.
   
 `AgentManager`: Manages interaction with agents. Initializes with a client, a list of agent creators, context variables, and streaming and debug options. Has methods to execute conversations asynchronously.
 
