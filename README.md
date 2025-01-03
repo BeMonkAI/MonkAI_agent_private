@@ -37,9 +37,9 @@ pip install -r requirements.txt
 
 <h2 style="font-family: 'Courier New', monospace; color: green;">Arquitecture</h2>  
 
-<h3 style="font-family: 'Courier New', monospace; color: green;">1. Main Components</h3>  
+<h3 style="font-family: 'Courier New', monospace; color: green;">Main Components</h3>  
 
-<h4 style="font-family: 'Courier New', monospace; color: green;">1.1 Agent creation and management</h4>
+<h4 style="font-family: 'Courier New', monospace; color: green;">Agent creation and management</h4>
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
 The core/ contains the main components where the central logic of the system is located. The base.py contains the definition of the AgentManager class, and the monkai_agent_creator.py contains the definition of the MonkaiAgentCreator class.
   
@@ -48,7 +48,7 @@ AgentManager: Manages interaction with agents. Initializes with a client, a list
 MonkaiAgentCreator: Responsible for creating agent instances. Can be configured to create different types of agents based on the system's needs.
 </p>
 
-<h4 style="font-family: 'Courier New', monospace; color: green;"> 1.2 Queries and data processing</h4>
+<h4 style="font-family: 'Courier New', monospace; color: green;">Queries and data processing</h4>
 
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
 The engines/contain the component responsible for executing specific operations, such as queries and data processing, as well as integration with other models and external systems. The query_engine.py contains the definition of the QueryEngine class.
@@ -57,15 +57,15 @@ QueryEngine: Main class responsible for performing queries and interacting with 
 
 </p>
 
-<h3 style="font-family: 'Courier New', monospace; color: green;">2. Interaction Diagram</h3> 
+<h3 style="font-family: 'Courier New', monospace; color: green;">Interaction Diagram</h3> 
  
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
 The framework's architecture is modular and extensible, allowing the creation and management of AI agents that interact with the user through a query engine. The AgentManager is the central management and orchestration point, coordinating interactions between the user, agents, and query engines.
 </p>
 
-<img src="./assets/mascote_monkai.png" alt="Logo" width="130">
+<img src="./assets/Arq.png" alt="Logo" width="130">
 
-<h3 style="font-family: 'Courier New', monospace; color: green;">2.1 Execution Flow</h3>  
+<h4 style="font-family: 'Courier New', monospace; color: green;">Execution</h4>  
 
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
 
