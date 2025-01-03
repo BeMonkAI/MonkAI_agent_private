@@ -1,10 +1,8 @@
 <img src="./assets/mascote_monkai.png" alt="Logo" width="130">
 
-
 <h2 style="font-family: 'Courier New', monospace; color: green;"> MonkAI_agent</h2>
 
 <h3 style="font-family: 'Courier New', monospace; color: green;"> The simple framework for creating intelligent agents, flows quickly, easily, and customizable.</h3>
-
 
 <p style="text-align: justify; font-family: Arial, sans-serif; font-size: 16px; color: #555;">
   This is an innovative framework designed to facilitate the creation of intelligent agent flows, offering a simple and customizable approach to the development of autonomous agents.
@@ -53,19 +51,30 @@ MonkaiAgentCreator: Responsible for creating agent instances. Can be configured 
 <h4 style="font-family: 'Courier New', monospace; color: green;"> 1.2 Queries and data processing</h4>
 
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
-The engines/ contains the components responsible for executing specific operations, such as queries and data processing, as well as integration with other models and external systems. The query_engine.py contains the definition of the QueryEngine class.
+The engines/contain the component responsible for executing specific operations, such as queries and data processing, as well as integration with other models and external systems. The query_engine.py contains the definition of the QueryEngine class.
   
 QueryEngine: Main class responsible for performing queries and interacting with the model and other data sources.
 
-<h3 style="font-family: 'Courier New', monospace; color: green;">2. Diagram</h3>  
+</p>
 
+<h3 style="font-family: 'Courier New', monospace; color: green;">2. Interaction Diagram</h3> 
+ 
+<p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
+The framework's architecture is modular and extensible, allowing the creation and management of AI agents that interact with the user through a query engine. The AgentManager is the central management and orchestration point, coordinating interactions between the user, agents, and query engines.
+</p>
 
-<h3 style="font-family: 'Courier New', monospace; color: green;">3. Files Structure</h3>  
+<img src="./assets/mascote_monkai.png" alt="Logo" width="130">
 
+<h3 style="font-family: 'Courier New', monospace; color: green;">2.1 Execution Flow</h3>  
 
+<p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
+a...
+b...
+c...  
 
+</p>
 
-
+<h2 style="font-family: 'Courier New', monospace; color: green;">Example</h2>  
 
 
 
