@@ -1,4 +1,4 @@
-<img src="./assets/mascote_monkai.png" alt="Logo" width="130">
+<img src="./assets/mascote_monkai.png" alt="Logo" width="150">
 
 <h2 style="font-family: 'Courier New', monospace; color: green;"> MonkAI_agent</h2>
 
@@ -63,7 +63,7 @@ QueryEngine: Main class responsible for performing queries and interacting with 
 The framework's architecture is modular and extensible, allowing the creation and management of AI agents that interact with the user through a query engine. The AgentManager is the central management and orchestration point, coordinating interactions between the user, agents, and query engines.
 </p>
 
-<img src="./assets/Arq.png" alt="Logo" width="130">
+<img src="./assets/Arq.png" alt="Logo">
 
 <h4 style="font-family: 'Courier New', monospace; color: green;">Execution</h4>  
 
