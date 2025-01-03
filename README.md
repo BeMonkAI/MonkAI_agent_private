@@ -68,9 +68,13 @@ The framework's architecture is modular and extensible, allowing the creation an
 <h3 style="font-family: 'Courier New', monospace; color: green;">2.1 Execution Flow</h3>  
 
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
-a...
-b...
-c...  
+
+Inicialização: O sistema é inicializado criando instâncias de AgentManager e MonkaiAgentCreator. O AgentManager é configurado com um cliente, criadores de agentes, variáveis de contexto, e opções de streaming e debug.
+
+Interação com o Usuário: O loop principal, função async_run_mydemo_loop do arquivo demo.py, solicita a entrada do usuário e adiciona a mensagem à lista de mensagens. O AgentManager processa a mensagem do usuário chamando a eu método run. 
+
+Processamento da Resposta: No método run do AgentManager é enviada a mensagem para o cliente que interage com o agente configurado. A resposta do agente é processada e exibida ao usuário.
+
 
 </p>
 
