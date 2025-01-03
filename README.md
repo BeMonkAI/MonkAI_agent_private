@@ -42,28 +42,21 @@ Important* do not forget your configuration file `config.py`, where you save you
 
 <h4 style="font-family: 'Courier New', monospace; color: green;">Agent creation and management</h4>
 
-<p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
-The core/ contains the main components where the central logic of the system is located. The `base.py` contains the definition of the AgentManager class, and the `monkai_agent_creator.py` contains the definition of the `MonkaiAgentCreator` class.
+The `core/` contains the main components where the central logic of the system is located. The `base.py` contains the definition of the AgentManager class, and the `monkai_agent_creator.py` contains the definition of the `MonkaiAgentCreator` class.
   
 `AgentManager`: Manages interaction with agents. Initializes with a client, a list of agent creators, context variables, and streaming and debug options. Has methods to execute conversations asynchronously.
 
 `MonkaiAgentCreator`: Responsible for creating agent instances. Can be configured to create different types of agents based on the system's needs.
-</p>
 
 <h4 style="font-family: 'Courier New', monospace; color: green;">Queries and data processing</h4>
 
-<p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
-The engines/ contain the component responsible for executing specific operations, such as queries and data processing, as well as integration with other models and external systems. The `query_engine.py` contains the definition of the QueryEngine class.
+The `engines/` contain the component responsible for executing specific operations, such as queries and data processing, as well as integration with other models and external systems. The `query_engine.py` contains the definition of the `QueryEngine` class.
   
 `QueryEngine`: Main class responsible for performing queries and interacting with the model and other data sources.
 
-</p>
-
 <h3 style="font-family: 'Courier New', monospace; color: green;">Interaction Diagram</h3> 
  
-<p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
-The framework's architecture is modular and extensible, allowing the creation and management of AI agents that interact with the user through a query engine. The AgentManager is the central management and orchestration point, coordinating interactions between the user, agents, and query engines.
-</p>
+The framework's architecture is modular and extensible, allowing the creation and management of AI agents that interact with the user through a query engine. The `AgentManager` is the central management and orchestration point, coordinating interactions between the user, agents, and query engines.
 
 <img src="./assets/Arq.png" alt="Logo">
 
@@ -76,7 +69,6 @@ Initialization: The system is initialized by creating instances of `AgentManager
 User Interaction: The main loop, `async_run_mydemo_loop` function in the `demo.py` file, prompts for user input and adds the message to the message list. The `AgentManager` processes the user's message by calling its `run` method.
 
 Response Processing: The AgentManager's `run` method sends the message to the client, interacting with the configured agent. The agent's response is processed and displayed to the user.
-
 
 </p>
 
