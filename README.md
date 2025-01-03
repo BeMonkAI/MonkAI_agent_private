@@ -53,7 +53,7 @@ MonkaiAgentCreator: Responsible for creating agent instances. Can be configured 
 <h4 style="font-family: 'Courier New', monospace; color: green;"> 1.2 Queries and data processing</h4>
 
 <p style="font-family: Arial, sans-serif; font-size: 16px; color: #555;">
-The engines/ contain the components responsible for executing specific operations, such as queries and data processing, as well as integration with other models and external systems. The query_engine.py contains the definition of the QueryEngine class.
+The engines/ contains the components responsible for executing specific operations, such as queries and data processing, as well as integration with other models and external systems. The query_engine.py contains the definition of the QueryEngine class.
   
 QueryEngine: Main class responsible for performing queries and interacting with the model and other data sources.
 
