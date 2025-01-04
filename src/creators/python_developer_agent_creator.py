@@ -1,16 +1,17 @@
 
-from creators.monkai_agent_creator import MonkaiAgentCreator
+from creators.monkai_agent_creator import TransferTriaggenAgentCreator
 from swarm import Agent
 import security
 import os
 
 #menssagens = [SystemMessage,SystemMessage,InstructionMessage1,InstructionMessage2, InstructionMessage3, .....]
 
-class PythonDeveloperAgentCreator(MonkaiAgentCreator):
+class PythonDeveloperAgentCreator(TransferTriaggenAgentCreator):
     def __init__(self):
+        super().__init__()
         self.agent = Agent(
             name="Python Developer Agent",
-           instructions="""Você é um desenvolvedor Python e deve criar um código Python a partir de um texto fornecido pelo usuário.
+           instructions="""Você é um desenvolvedor Python e deve criar um código Python a partir de um texto fornecido pelo usuário. Caso o código não tenha a ver com implementação de uma função chamar transfer_to_triagem.
             Instruções:
 
                 1. Interprete o texto do usuário para entender os requisitos do código Python a ser gerado.
@@ -22,7 +23,8 @@ class PythonDeveloperAgentCreator(MonkaiAgentCreator):
             functions=[  
                         self.verify_address,    
                         self.create_python_file,
-                        self.write_code_in_file
+                        self.write_code_in_file,
+                        self.transfer_to_triagem
                       ])
         
     def is_user_valid(self):

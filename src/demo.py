@@ -142,4 +142,5 @@ if __name__ == '__main__':
     qengine = QueryEngine()
     agents_creators.append(PythonDeveloperAgentCreator())
     triaggent_agent = TriaggentAgenCreator(agents_creators)
+    
     asyncio.run(async_run_mydemo_loop(triaggent_agent.triaggent_agent, engine=qengine))
