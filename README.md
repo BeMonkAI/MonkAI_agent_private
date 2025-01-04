@@ -1,5 +1,7 @@
 <img src="./assets/mascote_monkai.png" alt="Logo" width="150">
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 <h2 style="font-family: 'Courier New', monospace; color: green;"> MonkAI_agent</h2>
 
 <h3 style="font-family: 'Courier New', monospace; color: green;"> The simple framework for creating intelligent agents, flows quickly, easily, and customizable.</h3>
