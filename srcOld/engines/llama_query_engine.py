@@ -1,5 +1,5 @@
-#import sys, os
-#sys.path.append('/home/davi/Desktop/MonkAI_agent')
+import sys, os
+sys.path.append('/home/davi/Desktop/MonkAI_agent')
 import base64
 import logging
 from typing import Any
@@ -18,7 +18,6 @@ class LLamaQueryEngine:
         super().__init__()
         self.ai_region_manager:AIManager = AIManager()
         self.llm = self.ai_region_manager.get_gpt_by_region(region)
-        self.client = self.llm
         self.illm  =  self.ai_region_manager.get_multimodal_gpt_by_region(region)
         self.embedding = self.ai_region_manager.get_embedding_by_region(region)
         self._id = 0

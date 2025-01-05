@@ -1,7 +1,8 @@
-from core import AgentManager
+from swarm import Swarm
 import asyncio
-from core.triaggent_agent_creator import TriaggentAgenCreator
-
+#from swarm.repl import process_and_print_streaming_response, pretty_print_messages
+from creators.triaggent_agent_creator import TriaggentAgenCreator
+import aisuite as ai
 import json
 from engines.query_engine import QueryEngine
 from engines.llama_query_engine import LLamaQueryEngine
@@ -9,6 +10,7 @@ from bson import ObjectId
 #from monkai_shared import config
 import config 
 from llama_index.core import Settings
+from provider_enum import ProviderEnum
 
 def process_and_print_streaming_response(response):
     content = ""
@@ -65,7 +67,7 @@ def pretty_print_messages(messages) -> None:
 def run_mydemo_loop(
     starting_agent, context_variables=None, stream=False, debug=False, engine=None
 ) -> None:
-    client = AgentManager(client = engine.client)
+    client = Swarm(client = engine.client)
     print("Starting MonkAI Agent ✨")
 
     messages = []
@@ -94,10 +96,12 @@ def run_mydemo_loop(
         agent = response.agent
 
 async def async_run_mydemo_loop(
-    starting_agent=None, context_variables=None, stream=False, debug=False, engine=None
+    starting_agent, context_variables=None, stream=False, debug=False, engine=None
 ) -> None:
-    #client = AgentManager(client = engine.client)
-    client = AgentManager(client=engine.client, agents_creators=agents_creators, context_variables=context_variables, stream=stream, debug=debug)
+    if engine is not None:
+        client = Swarm(client = engine.client)
+    else:
+        client = Swarm(client=None)
     print("Starting MonkAI Agent ✨")
 
     messages = []
@@ -105,14 +109,32 @@ async def async_run_mydemo_loop(
 
     while True:
         user_input = input("\033[38;2;167;112;69mUser\033[0m: ")
-        #messages.append({"role": "user", "content": user_input})
+        messages.append({"role": "user", "content": user_input})
 
-        response =  await client.run(
-            user_message= user_input,
-            user_history=messages,
+        '''response =  await client.run(
             agent=agent,
+            messages=messages,
+            context_variables=context_variables or {},
+            stream=stream,
+            debug=debug,
+            model_override= config.GPT4o_OPENAI_GPT_MODEL_BRASILSOUTH,
+        )'''
+  
 
+        #model=f"{ProviderEnum.AZURE.value}:{config.GPT4o_OPENAI_GPT_MODEL_BRASILSOUTH}"
+        provider_configs = {"azure": {"api_key": f"{config.OPENAI_API_KEY_BRASILSOUTH}",
+                                          "base_url": f"{config.OPENAI_AZURE_ENDPOINT_BRASILSOUTH}",
+                                          "api_version": f"{config.GPT4o_OPENAI_API_VERSION_BRASILSOUTH}",}}
+        client = ai.Client(provider_configs=provider_configs)
+        model=f"{ProviderEnum.AZURE.value}:{config.GPT4o_OPENAI_GPT_MODEL_BRASILSOUTH}"
+        model="azure:gpt-4o-monkai-south"
+
+        response = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            temperature=0.75
         )
+        
 
         if stream:
             response = process_and_print_streaming_response(response)
@@ -126,8 +148,8 @@ async def async_run_mydemo_loop(
 if __name__ == '__main__': 
     #from dotenv import load_dotenv
     #load_dotenv() 
-    from examples.python_developer.python_developer_agent_creator import PythonDeveloperAgentCreator
-    #print("PDFAgent")    
+    from creators.python_developer_agent_creator import PythonDeveloperAgentCreator
+    print("PDFAgent")    
     #services = Services()
     #mluser_service = services.get_mluser_service()
     #user = mluser_service.get_user(ObjectId("672286bdc37ef0e984a8a455"))
@@ -139,6 +161,5 @@ if __name__ == '__main__':
     qengine = QueryEngine()
     agents_creators.append(PythonDeveloperAgentCreator())
     triaggent_agent = TriaggentAgenCreator(agents_creators)
+    
     asyncio.run(async_run_mydemo_loop(triaggent_agent.triaggent_agent, engine=qengine))
-
-   

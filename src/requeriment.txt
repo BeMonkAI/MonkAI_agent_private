@@ -10,4 +10,3 @@ llama-index-llms-azure-openai==0.1.9
 llama-index-embeddings-azure-openai==0.1.11
 llama-index-multi-modal-llms-azure-openai==0.1.4
 pymongo==4.8.0
-#aisuite
