@@ -24,11 +24,11 @@ Clone this repository:
  git clone https://github.com/BeMonkAI/MonkAI_agent.git
 </pre>
 
-<!--or
+or
 
 <pre style="background-color: #f6f8fa; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
-pip install MonkAI_agent
-</pre>  -->
+pip install monkai_agent
+</pre>  
 
 Navigate to the project directory and install the dependencies:
 
