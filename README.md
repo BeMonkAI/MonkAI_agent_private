@@ -36,8 +36,6 @@ Navigate to the project directory and install the dependencies:
 pip install -r requirements.txt
 </pre>
 
-Important* do not forget your configuration file `config.py`, where you save your API Keys.
-</p>
 
 <h2 style="font-family: 'Courier New', monospace; color: green;">Arquitecture</h2>  
 
