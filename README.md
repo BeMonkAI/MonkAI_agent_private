@@ -5,7 +5,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<h3 style="font-family: 'Courier New', monospace; color: green;"> The simple <font color="yellow">open source framework</font> for creating intelligent agents, flows quickly, easily, and customizable.</h3>
+<h3 style="font-family: 'Courier New', monospace; color: green;"> The simple <font color="red">open source framework</font> for creating intelligent agents, flows quickly, easily, and customizable.</h3>
 
 <p style="text-align: justify; font-family: Arial, sans-serif; font-size: 16px; color: #555;">
   This is an innovative framework designed to facilitate the creation of intelligent agent flows, offering a simple and customizable approach to the development of autonomous agents.
