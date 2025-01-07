@@ -24,18 +24,18 @@ Clone this repository:
  git clone https://github.com/BeMonkAI/MonkAI_agent.git
 </pre>
 
-or
-
-<pre style="background-color: #f6f8fa; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
-pip install monkai_agent
-</pre>  
-
 Navigate to the project directory and install the dependencies:
 
 <pre style="background-color: #f6f8fa; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
 pip install -r requirements.txt
 </pre>
 
+or
+
+<pre style="background-color: #f6f8fa; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+pip install monkai_agent
+
+</pre>  
 
 <h2 style="font-family: 'Courier New', monospace; color: green;">Arquitecture</h2>  
 
