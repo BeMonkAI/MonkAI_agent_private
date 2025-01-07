@@ -1,0 +1,6 @@
+setup.py
+monkai_agent_lib.egg-info/PKG-INFO
+monkai_agent_lib.egg-info/SOURCES.txt
+monkai_agent_lib.egg-info/dependency_links.txt
+monkai_agent_lib.egg-info/requires.txt
+monkai_agent_lib.egg-info/top_level.txt
