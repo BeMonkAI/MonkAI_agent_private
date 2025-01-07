@@ -1,0 +1,54 @@
+MonkAI\_agent package
+=====================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   MonkAI_agent.core
+   MonkAI_agent.engines
+
+Submodules
+----------
+
+MonkAI\_agent.config module
+---------------------------
+
+.. automodule:: MonkAI_agent.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+MonkAI\_agent.demo module
+-------------------------
+
+.. automodule:: MonkAI_agent.demo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+MonkAI\_agent.setup module
+--------------------------
+
+.. automodule:: MonkAI_agent.setup
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+MonkAI\_agent.usuario module
+----------------------------
+
+.. automodule:: MonkAI_agent.usuario
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: MonkAI_agent
+   :members:
+   :undoc-members:
+   :show-inheritance:
