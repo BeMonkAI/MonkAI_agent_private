@@ -3,12 +3,10 @@ import asyncio
 from core.triage_agent_creator import TriageAgentCreator
 from core.repl import run_demo_loop
 import json
-from engines.query_engine import QueryEngine
-from engines.llama_query_engine import LLamaQueryEngine
 from bson import ObjectId
 #from monkai_shared import config
 import config 
-from llama_index.core import Settings
+from openai import AzureOpenAI
 
 
 
@@ -25,15 +23,12 @@ if __name__ == '__main__':
     #user = mluser_service.get_user(ObjectId("672286bdc37ef0e984a8a455"))
     #contents = services.get_content_service().get_contents_by_user(user)
     agents_creators = []
-    engine = LLamaQueryEngine()
-    Settings.llm = engine.llm
-    Settings.embed_model = engine.embedding
-    qengine = QueryEngine()
     agents_creators.append(PythonDeveloperAgentCreator())
     agents_creators.append(ResearcherAgentCriator())
     agents_creators.append(JornalistAgentCreator())
     agents_creators.append(CalculatorAgentCriator("invalid_user"))
-    agent_manager = AgentManager(client=qengine.client, agents_creators=agents_creators)
+    client=AzureOpenAI(api_key=config.OPENAI_API_KEY_BRASILSOUTH, api_version=config.OPENAI_API_VERSION, azure_endpoint=config.OPENAI_AZURE_ENDPOINT_BRASILSOUTH)
+    agent_manager = AgentManager(client=client, agents_creators=agents_creators)
     asyncio.run(run_demo_loop(agent_manager, model=config.GPT4o_OPENAI_GPT_MODEL_BRASILSOUTH))
 
    

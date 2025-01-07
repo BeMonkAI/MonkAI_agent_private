@@ -6,7 +6,6 @@ import secrets  # For secure token generation
 import hashlib
 import config
 from .types import Response
-from engines.query_engine import QueryEngine
 from .monkai_agent_creator import MonkaiAgentCreator
 from .triage_agent_creator import TriageAgentCreator  # For hashing passwords
 
@@ -49,7 +48,6 @@ class AgentManager:
     generating briefings, and creating agents for interaction.
     """
 
-    #def __init__(self, client, agents_creators: list[MonkaiAgentCreator], engine:QueryEngine, context_variables=None, stream=False, debug=False):
     def __init__(self, client, agents_creators: list[MonkaiAgentCreator], context_variables=None, stream=False, debug=False):    
         """
         Initializes the AgentManager with the provided document link, user path, and user input.
@@ -340,7 +338,7 @@ class AgentManager:
     def get_triage_agent(self):
         return self.triage_agent_criator.get_agent()
 
-    async def run(self,user_message:str, user_history:list = None, agent=None)->Response:
+    async def run(self,user_message:str, user_history:list = None, agent=None, model_override="gpt-4o")->Response:
     #async def run(self, agent, messages, context_variables=None, stream=False, debug=False, model_override=None):
         """
         Executes the main workflow:
@@ -359,7 +357,7 @@ class AgentManager:
         # Run the conversation asynchronously
         response:Response = await self.__run(
             agent=agent_to_use,
-            model_override=config.GPT4o_OPENAI_GPT_MODEL_BRASILSOUTH,
+            model_override=model_override,
             messages= messages,
             context_variables=self.context_variables,
             stream=self.stream,

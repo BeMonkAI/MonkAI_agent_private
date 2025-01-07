@@ -55,7 +55,7 @@ def pretty_print_messages(messages) -> None:
             arg_str = json.dumps(json.loads(args)).replace(":", "=")
             print(f"\033[95m{name}\033[0m({arg_str[1:-1]})")
 
-async def run_demo_loop(manager:AgentManager,  context_variables={}, model=None,stream=False, debug=False) -> None:
+async def run_demo_loop(manager:AgentManager,  context_variables={}, model="gpt-4o",stream=False, debug=False) -> None:
     
     print("Starting MonkAI Agent ✨")
 
@@ -68,7 +68,8 @@ async def run_demo_loop(manager:AgentManager,  context_variables={}, model=None,
         response = await manager.run(
             agent=agent,
             user_message=user_input,
-            user_history=messages
+            user_history=messages,
+            model_override=model,
         )
 
         if stream:
