@@ -110,6 +110,6 @@ The framework architecture is modular and extensive, allowing the creation and m
 </p> 
 
 <p style="text-align: justify;">
-In the <code>demo.py</code> file, a demonstration of the multi-agent system is configured and executed, creating all these specialized agents, the Python Developer Agent, the Researcher, the Journalist, and the Calculator, managing them and using a query engine and specific configurations to execute the demonstration asynchronously.
+In the <code>demo.py</code> file demonstrates how the multi-agent system works, including the efficient execution of all specialized agents: Python Developer Agent, Researcher, Journalist, and Secure Calculator. It is a practical demonstration of how these agents are managed and operate together.
 </p>  
 
