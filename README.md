@@ -79,6 +79,7 @@ The framework architecture is modular and extensive, allowing the creation and m
 
 `JournalistAgentCreator`: Created and managed journalism agents within the system. This agent provides functionalities for collecting, analyzing, and summarizing news and articles. It encapsulates the logic required to create an agent specialized in performing journalism tasks, such as reading and summarizing news.
 
-In the `demo.py` file, a demonstration of the multi-agent system is configured and executed, creating all these specialized agents, the Python Developer Agent, the Researcher, the Journalist, and the Calculator, managing them and using a query engine and specific configurations to execute the demonstration asynchronously.
-
+<p style="text-align: justify;">
+In the <code>demo.py</code> file, a demonstration of the multi-agent system is configured and executed, creating all these specialized agents, the Python Developer Agent, the Researcher, the Journalist, and the Calculator, managing them and using a query engine and specific configurations to execute the demonstration asynchronously.
+</p>
 
