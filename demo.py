@@ -11,6 +11,14 @@ from openai import AzureOpenAI
 
 
 if __name__ == '__main__': 
+    """
+    Executa o loop de demonstração para diferentes criadores de agentes.
+
+    Importa e instancia criadores de agentes específicos para diferentes funções, como desenvolvedor Python,
+    pesquisador de informações, jornalista e calculadora segura. Adiciona esses criadores a uma lista para
+    posterior utilização no loop de demonstração. Neste loop pode ser adicionado quantos agentes forem criados no sistema
+
+    """
     #from dotenv import load_dotenv
     #load_dotenv() 
     from examples.python_developer.python_developer_agent_creator import PythonDeveloperAgentCreator
