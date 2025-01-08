@@ -61,7 +61,7 @@ The framework architecture is modular and extensive, allowing the creation and m
 
 <img src="./assets/Arq.png" alt="Logo">
 
-<h4 style="font-family: 'Courier New', monospace; color: green;">Main Classes</h4>  
+<!-- <h4 style="font-family: 'Courier New', monospace; color: green;">Main Classes</h4> -->  
 
 `AgentManager`: Manages interaction with agents. Initializes with a client, a list of agent creators, context variables, and streaming and debugging options. Has methods to execute conversations asynchronously.
 
