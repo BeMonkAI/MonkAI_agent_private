@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-#from core import Agent
 from .types import Agent
 
 class MonkaiAgentCreator(ABC):
@@ -18,11 +17,13 @@ class TransferTriageAgentCreator(MonkaiAgentCreator):
     """
     A class to create and manage a triage agent.
 
-    Attributes:
-        __triage_agent (Agent): The triage agent instance.
     """
 
     __triage_agent = None
+    """
+    The triage agent instance.
+    
+    """
 
     @property
     def set_triage_agent(self, triage_agent: Agent):

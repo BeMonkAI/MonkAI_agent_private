@@ -30,13 +30,18 @@ class Response(BaseModel):
 class Result(BaseModel):
     """
     Encapsulates the possible return values for an agent function.
-
-    Attributes:
-        value (str): The result value as a string.
-        agent (Agent): The agent instance, if applicable.
-        context_variables (dict): A dictionary of context variables.
+    
     """
 
     value: str = ""
+    """
+    The result value as a string.
+    """
     agent: Optional[Agent] = None
+    """
+    The agent instance, if applicable.
+    """
     context_variables: dict = {}
+    """
+    A dictionary of context variables.
+    """

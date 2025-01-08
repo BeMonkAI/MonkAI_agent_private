@@ -1,10 +1,9 @@
-from core import AgentManager
+from core.base import AgentManager
 import asyncio
 from core.triage_agent_creator import TriageAgentCreator
 from core.repl import run_demo_loop
 import json
 from bson import ObjectId
-#from monkai_shared import config
 import config 
 from openai import AzureOpenAI
 

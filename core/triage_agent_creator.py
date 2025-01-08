@@ -1,6 +1,5 @@
 
 from .monkai_agent_creator import MonkaiAgentCreator
-#from core import Agent
 from .types import Agent
 
 class TriageAgentCreator(MonkaiAgentCreator):

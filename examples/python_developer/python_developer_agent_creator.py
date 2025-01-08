@@ -1,6 +1,5 @@
-
-from core.monkai_agent_creator import MonkaiAgentCreator
-from core import Agent
+from core.monkai_agent_creator import MonkaiAgentCreator, TransferTriageAgentCreator
+from core.types import Agent
 import core.security as security
 import os
 
