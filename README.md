@@ -75,7 +75,7 @@ Application: The main purpose of this module is to illustrate the flexibility an
 The framework architecture is modular and extensive, allowing the creation and management of AI agents interacting with the user. The <code>AgentManager</code> is the central management and orchestration point, coordinating the interactions between the user and the agents.
 </p>
 
-<img src="./assets/Arq.png" alt="Logo">
+<img src="./assets/Arq1.png" alt="Logo">
 
 <!-- <h4 style="font-family: 'Courier New', monospace; color: green;">Main Classes</h4> -->  
 
