@@ -54,8 +54,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-MonkAI_agent.config">MonkAI_agent.config module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#monkai-agent-demo-module">MonkAI_agent.demo module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-MonkAI_agent.setup">MonkAI_agent.setup module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-MonkAI_agent.usuario">MonkAI_agent.usuario module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#MonkAI_agent.usuario.Usuario"><code class="docutils literal notranslate"><span class="pre">Usuario</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-MonkAI_agent.user">MonkAI_agent.user module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MonkAI_agent.user.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-MonkAI_agent">Module contents</a></li>
@@ -100,11 +100,18 @@
 <li class="toctree-l2"><a class="reference internal" href="MonkAI_agent.core.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MonkAI_agent.core.html#module-MonkAI_agent.core.base">MonkAI_agent.core.base module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager"><code class="docutils literal notranslate"><span class="pre">AgentManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.agent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.agents_creators"><code class="docutils literal notranslate"><span class="pre">AgentManager.agents_creators</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.client"><code class="docutils literal notranslate"><span class="pre">AgentManager.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.context_variables"><code class="docutils literal notranslate"><span class="pre">AgentManager.context_variables</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.debug"><code class="docutils literal notranslate"><span class="pre">AgentManager.debug</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.get_chat_completion"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_chat_completion()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.get_triage_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_triage_agent()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.handle_function_result"><code class="docutils literal notranslate"><span class="pre">AgentManager.handle_function_result()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.handle_tool_calls"><code class="docutils literal notranslate"><span class="pre">AgentManager.handle_tool_calls()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.run"><code class="docutils literal notranslate"><span class="pre">AgentManager.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.stream"><code class="docutils literal notranslate"><span class="pre">AgentManager.stream</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="MonkAI_agent.core.html#MonkAI_agent.core.base.AgentManager.triage_agent_criator"><code class="docutils literal notranslate"><span class="pre">AgentManager.triage_agent_criator</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -194,20 +201,38 @@
 <section id="module-MonkAI_agent.setup">
 <span id="monkai-agent-setup-module"></span><h2>MonkAI_agent.setup module<a class="headerlink" href="#module-MonkAI_agent.setup" title="Link to this heading"></a></h2>
 </section>
-<section id="module-MonkAI_agent.usuario">
-<span id="monkai-agent-usuario-module"></span><h2>MonkAI_agent.usuario module<a class="headerlink" href="#module-MonkAI_agent.usuario" title="Link to this heading"></a></h2>
+<section id="module-MonkAI_agent.user">
+<span id="monkai-agent-user-module"></span><h2>MonkAI_agent.user module<a class="headerlink" href="#module-MonkAI_agent.user" title="Link to this heading"></a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="MonkAI_agent.usuario.Usuario">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MonkAI_agent.usuario.</span></span><span class="sig-name descname"><span class="pre">Usuario</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nome</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MonkAI_agent/usuario.html#Usuario"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MonkAI_agent.usuario.Usuario" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="MonkAI_agent.user.User">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MonkAI_agent.user.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telephone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MonkAI_agent/user.html#User"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MonkAI_agent.user.User" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Classe que representa um usuário.</p>
+<p>Class that represents a user.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MonkAI_agent.user.User.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#MonkAI_agent.user.User.email" title="Link to this definition"></a></dt>
+<dd><p>e-mail of the user.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MonkAI_agent.user.User.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#MonkAI_agent.user.User.name" title="Link to this definition"></a></dt>
+<dd><p>name of the user.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MonkAI_agent.user.User.telephone">
+<span class="sig-name descname"><span class="pre">telephone</span></span><a class="headerlink" href="#MonkAI_agent.user.User.telephone" title="Link to this definition"></a></dt>
+<dd><p>telephone number of the user.</p>
+</dd></dl>
+
 <dl class="py method">
-<dt class="sig sig-object py" id="MonkAI_agent.usuario.Usuario.validacao">
-<span class="sig-name descname"><span class="pre">validacao</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MonkAI_agent/usuario.html#Usuario.validacao"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MonkAI_agent.usuario.Usuario.validacao" title="Link to this definition"></a></dt>
-<dd><p>Verifica se o usuário tem pelo menos o email ou o telefone.</p>
+<dt class="sig sig-object py" id="MonkAI_agent.user.User.validacao">
+<span class="sig-name descname"><span class="pre">validacao</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MonkAI_agent/user.html#User.validacao"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MonkAI_agent.user.User.validacao" title="Link to this definition"></a></dt>
+<dd><p>Checks if the user has at least an email or a phone number.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>True se o usuário tem pelo menos o email ou o telefone, caso contrário False.</p>
+<dd class="field-odd"><p>True if the user has at least an email or a phone number, otherwise False.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>

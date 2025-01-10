@@ -43,32 +43,46 @@ __CTX_VARS_NAME__ = "context_variables"
 
 class AgentManager:
     """
-    Manages the processing of a PDF document and a Google Sheet, including checking for updates,
-    generating briefings, and creating agents for interaction.
+    Manages the interaction with AI agents.
+
+    This class is responsible for managing the lifecycle of AI agents, handling
+    user interactions, processing tool calls, and managing context variables.
+
     """
 
     def __init__(self, client, agents_creators: list[MonkaiAgentCreator], context_variables=None, stream=False, debug=False):    
         """
-        Initializes the AgentManager with the provided document link, user path, and user input.
-
-        Args:
-            pdf_link (str): The URL link to the PDF document.
-            sheet_link (str): The URL link to the Google Sheet.
-            user_path (str): The file system path to the user's working directory.
-            user_input (str): The user's input or query.
-            agent (Agent, optional): The current agent handling the conversation.
-            messages (list, optional): The list of previous messages in the conversation.
-            context_variables (dict, optional): Context variables for the conversation.
-            stream (bool, optional): Whether to stream the response.
-            debug (bool, optional): Whether to enable debug mode.
+        Initializes the AgentManager with the provided client, agent creators, and optional parameters.
         """
+        
         self.client = OpenAI() if not client else client
+        """
+        The client instance to use for the agent.
+        """
         self.agents_creators = agents_creators
+        """
+        A list of agent creators to initialize the triage agent.
+        """
         self.triage_agent_criator = TriageAgentCreator(agents_creators)
+        """
+        The creator for the triage agent.
+        """
         self.context_variables = context_variables or {}
+        """
+        Context variables for the agent.
+        """
         self.stream = stream
+        """
+        Flag to enable streaming response.
+        """
         self.debug = debug
+        """
+        Flag to enable debugging.
+        """
         self.agent = self.triage_agent_criator.get_agent()
+        """
+        The current agent instance.
+        """
 
     def get_chat_completion(
         self,
@@ -79,6 +93,15 @@ class AgentManager:
         stream: bool,
         debug: bool,
     ) -> ChatCompletionMessage:
+        """
+
+        Generates a chat completion based on the user message and conversation history.
+
+        Returns:
+            Completion: The generated chat completion.
+
+        """
+        
         context_variables = defaultdict(str, context_variables)
         instructions = (
             agent.instructions(context_variables)
@@ -110,6 +133,15 @@ class AgentManager:
         return self.client.chat.completions.create(**create_params)
 
     def handle_function_result(self, result, debug) -> Result:
+        """
+
+        Handles the result of a function call, updating context variables and processing the result.
+
+        Returns:
+            PartialResponse: The response after handling the function result.
+
+        """
+        
         match result:
             case Result() as result:
                 return result
@@ -134,6 +166,19 @@ class AgentManager:
         context_variables: dict,
         debug: bool,
     ) -> Response:
+        """
+        Handles tool calls by executing the corresponding functions.
+
+        Args:
+            tool_calls (list): List of tool calls to handle.
+            functions (list): List of functions that the agent can perform.
+            context_variables (dict): Context variables for the agent.
+            debug (bool): Flag to enable debugging.
+
+        Returns:
+            Response: The response after handling the tool calls.
+        """
+        
         function_map = {f.__name__: f for f in functions}
         partial_response = Response(
             messages=[], agent=None, context_variables={})
@@ -335,16 +380,24 @@ class AgentManager:
         )
 
     def get_triage_agent(self):
+        """
+        Returns the triage agent.
+
+        Returns:
+            Agent: The triage agent instance.
+        """
         return self.triage_agent_criator.get_agent()
 
     async def run(self,user_message:str, user_history:list = None, agent=None, model_override="gpt-4o")->Response:
-    #async def run(self, agent, messages, context_variables=None, stream=False, debug=False, model_override=None):
+
         """
         Executes the main workflow:
-            - Handles the conversation.
+            - Handles the conversation with the user.
+            - Manages the interaction with the agent.
+            - Processes tool calls and updates context variables.
 
         Returns:
-            tuple: A tuple containing the updated messages list and the current agent.
+            Response: The response from the agent after processing the user message.
         """
         # Append user's message
         messages=user_history if user_history is not  None else []

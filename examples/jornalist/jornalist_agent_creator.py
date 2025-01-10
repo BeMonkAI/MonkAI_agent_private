@@ -9,8 +9,7 @@ class JornalistAgentCreator(TransferTriageAgentCreator):
     def __init__(self):
         super().__init__()
         self.__jornalist_agent = Agent(name="Jornalist Agent",
-           instructions="""Você é um agente encarregado de resumir las notícia do dia lidas nos Jornal especificos.
-            """,
+           instructions=""" You are an agent in charge of summarizing the day's news read in specific newspapers.""",
             functions=[  
                         self.read_news,
                       ])
@@ -22,7 +21,7 @@ class JornalistAgentCreator(TransferTriageAgentCreator):
         return self.__jornalist_agent
     
     def get_agent_briefing(self):
-        return "Você é um agente encarregado de resumir las notícia do dia lidas nos Jornal especificos"
+        return "You are an agent in charge of summarizing the day's news read in specific newspapers."
     
     def read_news(self):
         """

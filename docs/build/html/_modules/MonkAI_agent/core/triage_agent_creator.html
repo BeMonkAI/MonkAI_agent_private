@@ -76,17 +76,41 @@
 <div class="viewcode-block" id="TriageAgentCreator">
 <a class="viewcode-back" href="../../../MonkAI_agent.core.html#MonkAI_agent.core.triage_agent_creator.TriageAgentCreator">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">TriageAgentCreator</span><span class="p">(</span><span class="n">MonkaiAgentCreator</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for creating triage agents.</span>
+
+<span class="sd">    This class inherits from MonkaiAgentCreator and is responsible for creating</span>
+<span class="sd">    triage agents that decide which agent should handle the user&#39;s request. It</span>
+<span class="sd">    provides methods to create the triage agent and to provide a description of</span>
+<span class="sd">    its capabilities.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agents_creator</span><span class="p">:</span><span class="nb">list</span><span class="p">[</span><span class="n">MonkaiAgentCreator</span><span class="p">]):</span>
        <span class="bp">self</span><span class="o">.</span><span class="n">agents_creator</span> <span class="o">=</span> <span class="n">agents_creator</span>
        <span class="bp">self</span><span class="o">.</span><span class="n">__build_agent</span><span class="p">()</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__create_transfer_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent_creator</span><span class="p">:</span><span class="n">MonkaiAgentCreator</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a transfer function for the given agent creator.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            agent_creator (MonkaiAgentCreator): The agent creator for which to create the transfer function.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Callable: A function that transfers the conversation to the specified agent.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">def</span><span class="w"> </span><span class="nf">transfer_function</span><span class="p">():</span>
             <span class="k">return</span> <span class="n">agent_creator</span><span class="o">.</span><span class="n">get_agent</span><span class="p">()</span>
         <span class="n">transfer_function</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;transfer_to_</span><span class="si">{</span><span class="n">agent_creator</span><span class="o">.</span><span class="n">get_agent</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="n">transfer_function</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__build_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builds the triage agent by aggregating instructions and functions from all agent creators.</span>
+
+<span class="sd">        This method constructs the triage agent with specific instructions on when to transfer</span>
+<span class="sd">        the conversation to each specific agent based on the user&#39;s query.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="n">functions</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Building triage agent&quot;</span><span class="p">)</span>
@@ -114,13 +138,18 @@
 <div class="viewcode-block" id="TriageAgentCreator.get_agent">
 <a class="viewcode-back" href="../../../MonkAI_agent.core.html#MonkAI_agent.core.triage_agent_creator.TriageAgentCreator.get_agent">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">Agent</span><span class="p">:</span>
-         <span class="c1"># Define the triage agent manually</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates and returns an instance of a triage agent.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">triage_agent</span></div>
 
 
 <div class="viewcode-block" id="TriageAgentCreator.get_agent_briefing">
 <a class="viewcode-back" href="../../../MonkAI_agent.core.html#MonkAI_agent.core.triage_agent_creator.TriageAgentCreator.get_agent_briefing">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_agent_briefing</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a brief description of the triage agent&#39;s capabilities.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;Review the user&#39;s query and transfer the conversation to the appropriate agent.&quot;</span></div>
 </div>
 

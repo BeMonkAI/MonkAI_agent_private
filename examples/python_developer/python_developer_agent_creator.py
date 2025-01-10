@@ -9,14 +9,14 @@ class PythonDeveloperAgentCreator(MonkaiAgentCreator):
     def __init__(self):
         self.agent = Agent(
             name="Python Developer Agent",
-           instructions="""Você é um desenvolvedor Python e deve criar um código Python a partir de um texto fornecido pelo usuário.
-            Instruções:
+           instructions="""You are a Python developer and you have to create Python code from text provided by the user.
 
-                1. Interprete o texto do usuário para entender os requisitos do código Python a ser gerado.
-                2. Gere o código Python, definindo classes conforme necessário e seguindo boas práticas de orientação a objetos. Garanta que o código gerado seja corretamente documentado.
-                3. Verifique se existe um endereço fornecido pelo usuário na mensagem. Se nenhum endereço for fornecido, use a pasta atual.
-                4. Crie um arquivo .py na pasta especificada.
-                5. Defina uma classe no arquivo criado com as funcionalidades que atendem às condições especificadas pelo usuário.
+
+                1. Interpret the user's text to understand the requirements of the Python code to be generated.
+                2. Generate the Python code, defining classes as necessary and following good object-oriented practices. Ensure that the generated code is properly documented.
+                3. Check if there is an address provided by the user in the message. If no address is provided, use the current folder.
+                4. Create a .py file in the specified folder.
+                5. Define a class in the created file with the functionality that meets the conditions specified by the user.
             """,
             functions=[  
                         self.verify_address,    
@@ -67,6 +67,6 @@ class PythonDeveloperAgentCreator(MonkaiAgentCreator):
         return self.agent
     
     def get_agent_briefing(self) -> str:
-        return "Você é um desenvolvedor Python e deve criar um código Python a partir de um texto fornecido pelo usuário."
+        return "You are a Python developer and you have to create Python code from text provided by the user."
 
             

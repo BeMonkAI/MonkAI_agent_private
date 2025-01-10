@@ -75,12 +75,23 @@
 <div class="viewcode-block" id="MonkaiAgentCreator">
 <a class="viewcode-back" href="../../../MonkAI_agent.core.html#MonkAI_agent.core.monkai_agent_creator.MonkaiAgentCreator">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">MonkaiAgentCreator</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract class for creating agent instances.</span>
 
+<span class="sd">    This class provides a blueprint for creating different types of agents</span>
+<span class="sd">    based on the system&#39;s needs. It includes methods to create an agent</span>
+<span class="sd">    instance and to provide a brief description of the agent&#39;s capabilities.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="MonkaiAgentCreator.get_agent">
 <a class="viewcode-back" href="../../../MonkAI_agent.core.html#MonkAI_agent.core.monkai_agent_creator.MonkaiAgentCreator.get_agent">[docs]</a>
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">Agent</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates and returns an instance of an agent.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
 
@@ -88,6 +99,10 @@
 <a class="viewcode-back" href="../../../MonkAI_agent.core.html#MonkAI_agent.core.monkai_agent_creator.MonkaiAgentCreator.get_agent_briefing">[docs]</a>
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_agent_briefing</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a brief description of the agent&#39;s capabilities.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 </div>
 

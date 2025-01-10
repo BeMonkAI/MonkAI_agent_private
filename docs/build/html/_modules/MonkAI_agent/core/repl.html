@@ -77,6 +77,12 @@
 <div class="viewcode-block" id="process_and_print_streaming_response">
 <a class="viewcode-back" href="../../../MonkAI_agent.core.html#MonkAI_agent.core.repl.process_and_print_streaming_response">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">process_and_print_streaming_response</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Processes and prints the streaming response.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        response (dict): The streaming response to be processed and printed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="n">last_sender</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 
@@ -110,6 +116,12 @@
 <div class="viewcode-block" id="pretty_print_messages">
 <a class="viewcode-back" href="../../../MonkAI_agent.core.html#MonkAI_agent.core.repl.pretty_print_messages">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">pretty_print_messages</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pretty prints the messages with specific formatting.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        messages (list): List of messages to be printed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">messages</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">message</span><span class="p">[</span><span class="s2">&quot;role&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;assistant&quot;</span><span class="p">:</span>
             <span class="k">continue</span>
@@ -135,7 +147,16 @@
 <div class="viewcode-block" id="run_demo_loop">
 <a class="viewcode-back" href="../../../MonkAI_agent.core.html#MonkAI_agent.core.repl.run_demo_loop">[docs]</a>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run_demo_loop</span><span class="p">(</span><span class="n">manager</span><span class="p">:</span><span class="n">AgentManager</span><span class="p">,</span>  <span class="n">context_variables</span><span class="o">=</span><span class="p">{},</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span><span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Runs the demo loop for interacting with the MonkAI Agent.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        manager (AgentManager): The manager instance to run the agent.</span>
+<span class="sd">        context_variables (dict, optional): Context variables for the agent. Defaults to {}.</span>
+<span class="sd">        model (str, optional): The model to use for the agent. Defaults to &quot;gpt-4o&quot;.</span>
+<span class="sd">        stream (bool, optional): Flag to enable streaming response. Defaults to False.</span>
+<span class="sd">        debug (bool, optional): Flag to enable debugging. Defaults to False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting MonkAI Agent ✨&quot;</span><span class="p">)</span>
 
     <span class="n">messages</span> <span class="o">=</span> <span class="p">[]</span>

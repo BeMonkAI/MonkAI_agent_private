@@ -4,6 +4,12 @@ from .base import AgentManager
 
 
 def process_and_print_streaming_response(response):
+    """
+    Processes and prints the streaming response.
+
+    Args:
+        response (dict): The streaming response to be processed and printed.
+    """
     content = ""
     last_sender = ""
 
@@ -34,6 +40,12 @@ def process_and_print_streaming_response(response):
             return chunk["response"]
   
 def pretty_print_messages(messages) -> None:
+    """
+    Pretty prints the messages with specific formatting.
+
+    Args:
+        messages (list): List of messages to be printed.
+    """
     for message in messages:
         if message["role"] != "assistant":
             continue
@@ -56,7 +68,16 @@ def pretty_print_messages(messages) -> None:
             print(f"\033[95m{name}\033[0m({arg_str[1:-1]})")
 
 async def run_demo_loop(manager:AgentManager,  context_variables={}, model="gpt-4o",stream=False, debug=False) -> None:
-    
+    """
+    Runs the demo loop for interacting with the MonkAI Agent.
+
+    Args:
+        manager (AgentManager): The manager instance to run the agent.
+        context_variables (dict, optional): Context variables for the agent. Defaults to {}.
+        model (str, optional): The model to use for the agent. Defaults to "gpt-4o".
+        stream (bool, optional): Flag to enable streaming response. Defaults to False.
+        debug (bool, optional): Flag to enable debugging. Defaults to False.
+    """
     print("Starting MonkAI Agent ✨")
 
     messages = []

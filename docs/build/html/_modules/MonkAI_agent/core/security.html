@@ -76,8 +76,28 @@
 <a class="viewcode-back" href="../../../MonkAI_agent.core.html#MonkAI_agent.core.security.validate">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="n">validation_func</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">decorator_validate</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Decorator to validate user authority before executing a function.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            validation_func (Callable): A function that takes an authority argument and returns a boolean indicating whether the user is validated.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Callable: A decorator that wraps the original function with validation logic.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
         <span class="k">def</span><span class="w"> </span><span class="nf">wrapper_validate</span><span class="p">(</span><span class="n">authority</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Wrapper function that performs validation before executing the original function.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                authority: The authority object to be validated.</span>
+<span class="sd">                *args: Variable length argument list for the original function.</span>
+<span class="sd">                **kwargs: Arbitrary keyword arguments for the original function.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                The result of the original function if validation passes, otherwise a warning message.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
             <span class="k">if</span> <span class="n">validation_func</span><span class="p">(</span><span class="n">authority</span><span class="p">):</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;User is valid&quot;</span><span class="p">)</span>
                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">authority</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>

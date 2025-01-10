@@ -3,6 +3,13 @@ from datetime import datetime
 
 
 def debug_print(debug: bool, *args: str) -> None:
+    """
+    Prints debug messages with a timestamp if debugging is enabled.
+
+    Args:
+        debug (bool): Flag indicating whether debugging is enabled.
+        *args (str): Variable length argument list of messages to print.
+    """
     if not debug:
         return
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -11,6 +18,13 @@ def debug_print(debug: bool, *args: str) -> None:
 
 
 def merge_fields(target, source):
+    """
+    Merges fields from the source dictionary into the target dictionary.
+
+    Args:
+        target (dict): The target dictionary to merge fields into.
+        source (dict): The source dictionary to merge fields from.
+    """
     for key, value in source.items():
         if isinstance(value, str):
             target[key] += value
@@ -19,6 +33,13 @@ def merge_fields(target, source):
 
 
 def merge_chunk(final_response: dict, delta: dict) -> None:
+    """
+    Merges a chunk of data (delta) into the final response dictionary.
+
+    Args:
+        final_response (dict): The final response dictionary to merge data into.
+        delta (dict): The chunk of data to merge into the final response.
+    """
     delta.pop("role", None)
     merge_fields(final_response, delta)
 

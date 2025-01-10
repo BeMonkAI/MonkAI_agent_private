@@ -36,10 +36,10 @@ MonkAI\_agent.setup module
    :undoc-members:
    :show-inheritance:
 
-MonkAI\_agent.usuario module
-----------------------------
+MonkAI\_agent.user module
+-------------------------
 
-.. automodule:: MonkAI_agent.usuario
+.. automodule:: MonkAI_agent.user
    :members:
    :undoc-members:
    :show-inheritance:

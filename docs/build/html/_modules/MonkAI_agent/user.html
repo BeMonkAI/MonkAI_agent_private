@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MonkAI_agent.usuario &mdash; MonkAI_agent v.0.0.1 documentation</title>
+  <title>MonkAI_agent.user &mdash; MonkAI_agent v.0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
@@ -59,7 +59,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
-      <li class="breadcrumb-item active">MonkAI_agent.usuario</li>
+      <li class="breadcrumb-item active">MonkAI_agent.user</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -68,54 +68,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Source code for MonkAI_agent.usuario</h1><div class="highlight"><pre>
-<div class="viewcode-block" id="Usuario">
-<a class="viewcode-back" href="../../MonkAI_agent.html#MonkAI_agent.usuario.Usuario">[docs]</a>
-<span></span><span class="k">class</span><span class="w"> </span><span class="nc">Usuario</span><span class="p">:</span>
+  <h1>Source code for MonkAI_agent.user</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="User">
+<a class="viewcode-back" href="../../MonkAI_agent.html#MonkAI_agent.user.User">[docs]</a>
+<span></span><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">      Classe que representa um usuário.</span>
+<span class="sd">      Class that represents a user.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">telefone</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">telephone</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Inicializa uma nova instância da classe Usuario.</span>
+<span class="sd">        Initializes a new instance of the User class.</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            nome (str): O nome do usuário.</span>
-<span class="sd">            email (str, opcional): O email do usuário.</span>
-<span class="sd">            telefone (str, opcional): O telefone do usuário.</span>
-<span class="sd">            id (str, opcional): O ID do usuário.</span>
+<span class="sd">        </span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
+    
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        name of the user.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">telefone</span> <span class="o">=</span> <span class="n">telefone</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        e-mail of the user.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">telephone</span> <span class="o">=</span> <span class="n">telephone</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        telephone number of the user. </span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
 
-<div class="viewcode-block" id="Usuario.validacao">
-<a class="viewcode-back" href="../../MonkAI_agent.html#MonkAI_agent.usuario.Usuario.validacao">[docs]</a>
+<div class="viewcode-block" id="User.validacao">
+<a class="viewcode-back" href="../../MonkAI_agent.html#MonkAI_agent.user.User.validacao">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">validacao</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Verifica se o usuário tem pelo menos o email ou o telefone.</span>
+<span class="sd">        Checks if the user has at least an email or a phone number.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            bool: True se o usuário tem pelo menos o email ou o telefone, caso contrário False.</span>
+<span class="sd">            bool: True if the user has at least an email or a phone number, otherwise False.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">telefone</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">telephone</span><span class="p">)</span></div>
 </div>
 
 
 <span class="c1"># Exemplo de uso</span>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Exemplo de uso. Verifica se os usuários são válidos. </span>
-<span class="sd">    Cria três instâncias da classe Usuario com diferentes combinações de atributos e imprime o resultado da validação de cada usuário.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">usuario1</span> <span class="o">=</span> <span class="n">Usuario</span><span class="p">(</span><span class="n">nome</span><span class="o">=</span><span class="s2">&quot;João&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s2">&quot;joao@example.com&quot;</span><span class="p">)</span>
-    <span class="n">usuario2</span> <span class="o">=</span> <span class="n">Usuario</span><span class="p">(</span><span class="n">nome</span><span class="o">=</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="n">telefone</span><span class="o">=</span><span class="s2">&quot;123456789&quot;</span><span class="p">)</span>
-    <span class="n">usuario3</span> <span class="o">=</span> <span class="n">Usuario</span><span class="p">(</span><span class="n">nome</span><span class="o">=</span><span class="s2">&quot;Pedro&quot;</span><span class="p">)</span>
+<span class="sd">    Usage example. Checks if users are valid.</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="n">usuario1</span><span class="o">.</span><span class="n">validacao</span><span class="p">())</span>  <span class="c1"># True</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">usuario2</span><span class="o">.</span><span class="n">validacao</span><span class="p">())</span>  <span class="c1"># True</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">usuario3</span><span class="o">.</span><span class="n">validacao</span><span class="p">())</span>  <span class="c1"># False</span>
+<span class="sd">    Creates three instances of the User class with different combinations of attributes and prints the validation result for each user.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Johan&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s2">&quot;joao@example.com&quot;</span><span class="p">)</span>
+    <span class="n">user2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="n">telephone</span><span class="o">=</span><span class="s2">&quot;123456789&quot;</span><span class="p">)</span>
+    <span class="n">user3</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Pedro&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">user1</span><span class="o">.</span><span class="n">validacao</span><span class="p">())</span>  <span class="c1"># True</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">user2</span><span class="o">.</span><span class="n">validacao</span><span class="p">())</span>  <span class="c1"># True</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">user3</span><span class="o">.</span><span class="n">validacao</span><span class="p">())</span>  <span class="c1"># False</span>
 </pre></div>
 
            </div>
